@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Product Page</title>
+		<link rel="stylesheet" href="my_style.css">
+		<meta charset="UTF-8">
+		<meta name="description" 	content="Free Web tutorials">
+		<meta name="keywords" 		content="HTML,CSS,XML,JavaScript">
+		<meta name="author" 		content="Sahar Tebyanian">
+	</head>
+	
+	<body>
+	
+		<div class="container">
+		
+			<header>
+				<h1>Piano Tutorial</h1>
+			</header>
+		  
+			<nav>
+				<ul>
+					<li><a href="index.html">		Home Page</a></li>
+					<li><a href="product.html">		Product</a></li>
+					<li><a href="about_us.html">	About Us</a></li>
+					<li><a href="legal.html">		Legal Information</a></li>
+					<li><a href="google_map.html">	Google Map</a></li>
+				 </ul>
+			</nav>			
+			
+			<aside>
+			<img src="learner1.PNG" alt="Piano" width="200" height="440">
+			</aside>
+
+			<article>
+				<h1>
+					Product Page
+				</h1>
+			</article>
+			<element>
+				
+				<img src="Piano-Note.PNG" alt="Piano" width="200" height="170">
+			</element>
+			
+			<element>
+				
+				<img src="Piano-Note1.PNG" alt="Piano" width="200" height="170">
+			</element>
+			
+			<element>
+				
+				<img src="Piano-Note2.PNG" alt="Piano" width="200" height="170">
+			</element>
+
+			<element>
+				
+				<img src="Piano-Note9.PNG" alt="Piano" width="200" height="170">
+			</element>
+			
+			<element>
+				
+				<img src="Piano-Note6.PNG" alt="Piano" width="200" height="170">
+			</element>
+			
+			<element>
+				
+				<img src="Piano-Note4.PNG" alt="Piano" width="200" height="170">
+			</element>
+			
+			<element>
+				
+				<img src="Piano-Note5.PNG" alt="Piano" width="200" height="170">
+			</element>
+
+			<element>
+				
+				<img src="Piano-Note7.PNG" alt="Piano" width="200" height="170">
+			</element>
+			
+			<form enctype="multipart/form-data" action="upload.php" method="post">
+<form enctype="multipart/form-data" action="upload.php" method="post">
+Please select an Piano Image:
+<input name="filename" type="file" size="55">
+<br>
+<input type="submit" value="Upload">
+</form>
+
+<h2>Purchase Items</h2
+<form name="PurchaseStock" action="Query3.php" onsubmit="return validateForm(this);" method="post">
+Item Code <input type="text" name="ItemCode" size="6"><br>
+<input type="submit" value="Submit">
+</form><br><br><br>
+<h2> Delete Items </h2>
+<form name="DeleteStock" action="Query2.php" onsubmit="return validateForm(this);" method="post">
+Item Code <input type="text" name="ItemCode" size="6"><br>
+<input type="submit" value="Submit">
+</form>
+<h2>Search Stock Items</h2>
+<form name="QueryStock" action="Query.php" onsubmit="return validateForm(this);" method="post">
+Item Code <input type="text" name="ItemCode" size="6"><br>
+<input type="submit" value="Submit">
+</form>
+
+			<footer>
+				Copyright &copy; facebook.com
+			</footer>
+			
+		</div>
+		
+	</body>
+	
+</html>
