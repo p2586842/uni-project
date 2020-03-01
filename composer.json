@@ -4,6 +4,7 @@
     },
     "autoload": {
         "files": [
+            "classes/all.php",
             "functions/all.php"
         ]
     }

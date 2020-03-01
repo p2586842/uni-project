@@ -1,6 +1,5 @@
 <?php
 include ('vendor/autoload.php');
-include ('classes/db.php');
 
 $db = new Db();
 
