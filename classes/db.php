@@ -2,6 +2,8 @@
 include ('../vendor/autoload.php');
 
 class Db {
+    protected $pdo;
+
     public function __construct()
     {
         loadEnv();
@@ -19,9 +21,14 @@ class Db {
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
         try {
-            $pdo = new PDO($dsn, $user, $pass, $options);
+            $this->pdo = new PDO($dsn, $user, $pass, $options);
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
+    }
+
+    public function query($query)
+    {
+        return $this->pdo->query($query);
     }
 }
