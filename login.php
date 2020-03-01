@@ -1,32 +1,23 @@
 <?php
+include ('vendor/autoload.php');
+include ('classes/db.php');
 
-$username = "root";
-$password = "usbw";
-$hostname = "localhost"; // Or put IP Address
+$db = new Db();
 
-$db_connect = mysql_connect ($hostname, $username, $password) or die("Could not connect to database");
-
-$select_db = mysql_select_db ("sahar20, $db_connect");
-
-$myusername = $_POST['user'];
-$mypassword = $_POST['pass'];
-
+$myusername = $_POST['username'];
+$mypassword = $_POST['password'];
 $myusername = stripcslashes($myusername);
 $mypassword = stripcslashes($mypassword);
 
-$user_query = "SELECT * FROM user WHERE username='$myusername'and password='$mypassword' ";
-$user_result = mysql_query($user_query);
-$user_count = mysql_num_rows($user_result);
+$user_query = $db->query("SELECT * FROM login WHERE Email='$myusername' AND password='$mypassword'");
 
-mysql_close();
-
-if($user_count == 1)
+if($user_query->rowCount() == 1)
 {
     $login_time = 180 + time();
     setcookie(loggedin, date("F jS - g:i a"), $login_time);
     header ("location:login_v20.php");
-}else
-{
+    die();
+} else {
     echo 'incorrect username and/or password, you are not connected';
 }
 
