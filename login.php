@@ -13,7 +13,7 @@ $user_query = $db->query("SELECT * FROM login WHERE Email='$myusername' AND pass
 if($user_query->rowCount() == 1)
 {
     $login_time = 180 + time();
-    setcookie('loggedin', date("F jS - g:i a"), $login_time);
+    setcookie('logged_in', date("F jS - g:i a"), $login_time);
     header ("location:login_v20.php");
     die();
 } else {
@@ -21,7 +21,7 @@ if($user_query->rowCount() == 1)
 }
 
 
-if(!isset($_COOKIE['loggedin']))
+if(!isset($_COOKIE['logged_in']))
 {
     header("location:index.php");
 }
