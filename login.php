@@ -9,8 +9,20 @@ $myusername = stripcslashes($myusername);
 $mypassword = stripcslashes($mypassword);
 
 $user_query = $db->query("SELECT * FROM login WHERE Email='$myusername' AND password='$mypassword'");
+try {
+    $conn = new PDOException("mysql:host=$servername;dbname=myDB", $myusername, $mypassword);
+// set the PDO
+    $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if($user_query->rowCount() == 1)
+    echo "Connection Is Successfully";
+
+}
+catch (PDOException $e) {
+    echo "connection failed: " . $e->getMessage();
+}
+$conn = null;
+
+/*if($user_query->rowCount() == 1)
 {
     $login_time = 180 + time();
     setcookie('logged_in', date("F jS - g:i a"), $login_time);
@@ -25,7 +37,7 @@ if(!isset($_COOKIE['logged_in']))
 {
     header("location:index.php");
 }
-
+**/
 ?>
 	?>
 <html>
