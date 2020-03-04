@@ -1,10 +1,15 @@
 <?php
 
+include ('config.php');
+include('vendor/autoload.php');
 
-$servername = "localhost";
+
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
-$dbname = "sahar20.sql";
+$dbname = <<<TAG
+uni-project/sahar20.sql
+TAG;
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=sahar20.sql", $username, $password);
@@ -21,11 +26,10 @@ $conn = null;
 
 
 ?>
-
 <footer>
 				Copyright &copy; Facebook
 </footer>
-			
+
 
 
 
